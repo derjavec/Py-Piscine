@@ -7,7 +7,7 @@ def ft_zoom(image: np.ndarray) -> np.ndarray:
     Crops the last 2/3 of the image in height and width,
     and selects only the first color channel (e.g. red).
     Prints the new shape and pixel values.
-    
+
     """
     try:
         height, width = image.shape[:2]
@@ -37,7 +37,7 @@ def main():
     if zoomed is None:
         return
 
-    plt.imshow(zoomed)
+    plt.imshow(zoomed, cmap='gray')
     plt.title("Zoomed Image (last 2/3)")
     plt.xlabel("X axis")
     plt.ylabel("Y axis")
