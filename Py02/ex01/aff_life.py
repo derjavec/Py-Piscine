@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
-#import numpy as np
 from load_csv import load
 
 def main() :
@@ -16,7 +15,7 @@ def main() :
         print(f"No data found for country: {country}")
         return
 
-    years = FranceLifeExp.columns[1:]
+    years = [int(year) for year in FranceLifeExp.columns[1:]]
     lifeExp = FranceLifeExp.iloc[0, 1:].values.astype(float)
 
     plt.figure(figsize=(12,6))
@@ -24,7 +23,7 @@ def main() :
     plt.title(f"{country} Life Expectancy Projections ")
     plt.xlabel("Year")
     plt.ylabel("Life Expectancy (years)")
-    plt.xticks([])
+    plt.xticks(years[::50])
     plt.legend([country])
     plt.tight_layout()
     plt.show()
