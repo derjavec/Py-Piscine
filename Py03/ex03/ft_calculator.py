@@ -1,9 +1,14 @@
+
+def Print(obj):
+        print(obj)
+
 class calculator:
     """
     A simple calculator class that operates on a vector (list of numbers).
     Supports addition, subtraction, multiplication, and division by a scalar.
     All operations modify the vector in place and print the result.
     """
+
 
     def __init__(self, vector):
         """
@@ -47,3 +52,5 @@ class calculator:
             return
         self.vector = [x / scalar for x in self.vector]
         print(self.vector)
+
+   
